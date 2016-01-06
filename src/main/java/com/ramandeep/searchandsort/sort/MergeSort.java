@@ -39,7 +39,7 @@ public class MergeSort implements Sort {
 		if (!(p == q && q == r)) {
 			int n1 = p;
 			int n2 = q + 1;
-			while (n1 < n2 && n2 <= r) {
+			while (n1 < n2 && n1 <= n2 + q && n2 <= r) {
 				if (array[n1] > array[n2]) {
 					rotateRight(array, n1, n2);
 					n2++;
