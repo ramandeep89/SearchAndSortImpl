@@ -1,5 +1,7 @@
 package com.ramandeep.searchandsort.sort;
 
+import com.ramandeep.searchandsort.util.ArrayModifier;
+
 public class MergeSort implements Sort {
 
 	@Override
@@ -41,28 +43,11 @@ public class MergeSort implements Sort {
 			int n2 = q + 1;
 			while (n1 < n2 && n1 <= n2 + q && n2 <= r) {
 				if (array[n1] > array[n2]) {
-					rotateRight(array, n1, n2);
+					ArrayModifier.rotateRight(array, n1, n2);
 					n2++;
 				}
 				n1++;
 			}
 		}
 	}
-
-	/**
-	 * 
-	 * @param array
-	 * @param x:
-	 *            rotate starts from
-	 * @param y:
-	 *            rotate ends at (this element will move to front)
-	 */
-	public void rotateRight(int[] array, int x, int y) {
-		int temp = array[y];
-		for (int i = y - 1; i >= x; i--) {
-			array[i + 1] = array[i];
-		}
-		array[x] = temp;
-	}
-
 }
