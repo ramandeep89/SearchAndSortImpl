@@ -1,10 +1,13 @@
 package com.ramandeep.searchandsort.test;
-import java.util.Arrays;
 
+import com.ramandeep.searchandsort.util.MaxHeap;
+import com.ramandeep.searchandsort.util.MinHeap;
 import com.ramandeep.searchandsort.util.UnsortedArrayProvider;
 
 public class TestUtil {
 	public static void main(String[] args) {
-		System.out.println(Arrays.toString(UnsortedArrayProvider.getArray(8)));
+		new MaxHeap(UnsortedArrayProvider.getArray(10));
+		System.out.println();
+		new MinHeap(UnsortedArrayProvider.getArray(10));
 	}
 }
